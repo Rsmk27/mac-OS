@@ -1,1 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>macOS Clone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Boot Screen -->
+    <div id="boot-screen" class="screen">
+        <div class="apple-logo">
+            <i class="fab fa-apple"></i>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
 
+    <!-- Login Screen -->
+    <div id="login-screen" class="screen hidden">
+        <div class="login-content">
+            <div class="user-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="user-name">User</div>
+            <div class="password-input-wrapper">
+                <input type="password" placeholder="Enter Password" id="login-password">
+                <button id="login-btn"><i class="fas fa-arrow-right"></i></button>
+            </div>
+            <div class="login-footer">
+                <div class="footer-item">
+                    <div class="icon-circle"><i class="fas fa-moon"></i></div>
+                    <span>Sleep</span>
+                </div>
+                <div class="footer-item">
+                    <div class="icon-circle"><i class="fas fa-redo"></i></div>
+                    <span>Restart</span>
+                </div>
+                <div class="footer-item">
+                    <div class="icon-circle"><i class="fas fa-power-off"></i></div>
+                    <span>Shut Down</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desktop Environment -->
+    <div id="desktop" class="screen hidden">
+        <!-- Menu Bar -->
+        <div id="menu-bar">
+            <div class="left-menu">
+                <div class="menu-item apple-icon"><i class="fab fa-apple"></i></div>
+                <div class="menu-item active">Finder</div>
+                <div class="menu-item">File</div>
+                <div class="menu-item">Edit</div>
+                <div class="menu-item">View</div>
+                <div class="menu-item">Go</div>
+                <div class="menu-item">Window</div>
+                <div class="menu-item">Help</div>
+            </div>
+            <div class="right-menu">
+                <div class="menu-item"><i class="fas fa-battery-full"></i></div>
+                <div class="menu-item"><i class="fas fa-wifi"></i></div>
+                <div class="menu-item"><i class="fas fa-search"></i></div>
+                <div class="menu-item"><i class="fas fa-sliders-h"></i></div>
+                <div class="menu-item" id="clock">Mon Jun 22 9:41 AM</div>
+            </div>
+        </div>
+
+        <!-- Desktop Area (Icons & Windows) -->
+        <div id="desktop-area">
+            <!-- Desktop Icons -->
+            <div class="desktop-icon" data-app="finder">
+                <div class="icon-img finder-icon">
+                    <i class="fas fa-face-smile"></i>
+                </div>
+                <span class="icon-label">Finder</span>
+            </div>
+            <div class="desktop-icon" data-app="notes">
+                <div class="icon-img notes-icon">
+                    <i class="fas fa-sticky-note"></i>
+                </div>
+                <span class="icon-label">Notes</span>
+            </div>
+        </div>
+
+        <!-- Dock -->
+        <div id="dock-container">
+            <div class="dock">
+                <div class="dock-item" data-app="finder" title="Finder">
+                    <div class="dock-icon finder-icon"><i class="fas fa-face-smile"></i></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="dock-item" data-app="launchpad" title="Launchpad">
+                    <div class="dock-icon launchpad-icon"><i class="fas fa-rocket"></i></div>
+                </div>
+                <div class="dock-item" data-app="safari" title="Safari">
+                    <div class="dock-icon safari-icon"><i class="fas fa-compass"></i></div>
+                </div>
+                <div class="dock-item" data-app="messages" title="Messages">
+                    <div class="dock-icon messages-icon"><i class="fas fa-comment-dots"></i></div>
+                </div>
+                <div class="dock-item" data-app="mail" title="Mail">
+                    <div class="dock-icon mail-icon"><i class="fas fa-envelope"></i></div>
+                </div>
+                <div class="dock-item" data-app="maps" title="Maps">
+                    <div class="dock-icon maps-icon"><i class="fas fa-map-marked-alt"></i></div>
+                </div>
+                <div class="dock-item" data-app="photos" title="Photos">
+                    <div class="dock-icon photos-icon"><i class="fas fa-images"></i></div>
+                </div>
+                <div class="dock-item" data-app="facetime" title="FaceTime">
+                    <div class="dock-icon facetime-icon"><i class="fas fa-video"></i></div>
+                </div>
+                <div class="dock-item" data-app="calendar" title="Calendar">
+                    <div class="dock-icon calendar-icon"><i class="fas fa-calendar-alt"></i></div>
+                </div>
+                <div class="dock-item" data-app="contacts" title="Contacts">
+                    <div class="dock-icon contacts-icon"><i class="fas fa-address-book"></i></div>
+                </div>
+                <div class="dock-item" data-app="reminders" title="Reminders">
+                    <div class="dock-icon reminders-icon"><i class="fas fa-list-ul"></i></div>
+                </div>
+                <div class="dock-item" data-app="notes" title="Notes">
+                    <div class="dock-icon notes-icon"><i class="fas fa-sticky-note"></i></div>
+                </div>
+                <div class="dock-item" data-app="music" title="Music">
+                    <div class="dock-icon music-icon"><i class="fas fa-music"></i></div>
+                </div>
+                <div class="dock-item" data-app="podcasts" title="Podcasts">
+                    <div class="dock-icon podcasts-icon"><i class="fas fa-podcast"></i></div>
+                </div>
+                <div class="dock-item" data-app="tv" title="TV">
+                    <div class="dock-icon tv-icon"><i class="fas fa-tv"></i></div>
+                </div>
+                <div class="dock-item" data-app="news" title="News">
+                    <div class="dock-icon news-icon"><i class="fas fa-newspaper"></i></div>
+                </div>
+                <div class="separator"></div>
+                <div class="dock-item" data-app="settings" title="System Settings">
+                    <div class="dock-icon settings-icon"><i class="fas fa-cog"></i></div>
+                </div>
+                <div class="dock-item" data-app="calculator" title="Calculator">
+                    <div class="dock-icon calculator-icon"><i class="fas fa-calculator"></i></div>
+                </div>
+                <div class="separator"></div>
+                <div class="dock-item" data-app="trash" title="Trash">
+                    <div class="dock-icon trash-icon"><i class="fas fa-trash-alt"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/apps.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
